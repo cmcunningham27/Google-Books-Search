@@ -51,20 +51,23 @@ class SearchBooks extends Component {
         if(this.state.searched) {
             list = this.state.books.items.map(
                 (book) => (
-                    <Results 
-                        key={book.id}
-                        title={book.volumeInfo.title}
-                        authors={book.volumeInfo.authors.join(', ')}
-                        description={book.volumeInfo.description}
-                        image={book.volumeInfo.imageLinks.thumbnail}
-                        link={book.volumeInfo.infoLink}
-                        Button={() => (
-                            <button 
-                                onClick={() => this.handleSaveBook(book.id)}>
-                                Save
-                            </button>
-                        )}
-                    /> 
+                    <div>
+                        <h5>Results</h5>
+                        <Results 
+                            key={book.id}
+                            title={book.volumeInfo.title}
+                            authors={book.volumeInfo.authors.join(', ')}
+                            description={book.volumeInfo.description}
+                            image={book.volumeInfo.imageLinks.thumbnail}
+                            link={book.volumeInfo.infoLink}
+                            Button={() => (
+                                <button 
+                                    onClick={() => this.handleSaveBook(book.id)}>
+                                    Save
+                                </button>
+                            )}
+                        /> 
+                    </div>
                 )
             )
         } else {

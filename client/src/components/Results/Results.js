@@ -1,5 +1,5 @@
 import React from 'react';
-import BookCard from '../BookCard/Bookcard';
+import BookCard from '../BookCard/BookCard';
 
 const Results = () => {
 
@@ -9,3 +9,5 @@ const Results = () => {
         </div>
     )
 }
+
+export default Results;

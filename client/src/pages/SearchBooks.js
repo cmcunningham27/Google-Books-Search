@@ -24,40 +24,38 @@ class SearchBooks extends Component {
             .then((res) => {
                 console.log(res);
                 this.setState({
-                        books: res.data
+                        books: res.data,
+                        searched: true
                 })
             })
-            .then(() => this.setState({searched: true}))
+            // .then(() => console.log(this.state.books))
             .catch(err => console.log(err));
     };
     
 
     render() {
+        let list;
+        if(this.state.searched) {
+            list = this.state.books.items.map(
+                (book) => (
+                    <Results 
+                        key={book.id}
+                        title={book.volumeInfo.title}
+                        authors={book.volumeInfo.authors.join(', ')}
+                        description={book.volumeInfo.description}
+                        image={book.volumeInfo.imageLinks.thumbnail}
+                        link={book.volumeInfo.infoLink}
+                    /> 
+                )
+            )
+        } else {
+            list = <h5>Search A Book!</h5>
+        }
+
         return (
             <div>
                 <GoogleBar handleSearch={this.handleSearch} handleBookSearch={this.handleBookSearch} searchTerm={this.state.searchTerm}/>
-                <div>
-                {this.state.searched ? (
-                    <ul>
-                        {this.state.books.map(
-                            (book) => (
-                                <Results 
-                                    key={book.id}
-                                    title={book.volumeInfo.title}
-                                    authors={book.volumeInfo.authors.join(', ')}
-                                    description={book.volumeInfo.description}
-                                    image={book.volumeInfo.imageLinks.thumbnail}
-                                    link={book.volumeInfo.infoLink}
-                                /> 
-                            )
-                        )}
-                    </ul>
-                ) : (
-                    <h5>
-                        Search A Book!
-                    </h5>
-                )}
-                </div>
+                {list}
             </div>
         )
     }

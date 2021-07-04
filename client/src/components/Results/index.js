@@ -1,11 +1,11 @@
 import React from 'react';
 import BookCard from '../BookCard';
 
-const Results = () => {
-
+const Results = (props) => {
+    console.log(props);
     return (
         <div>
-            <BookCard />
+            <BookCard {...props}/>
         </div>
     )
 }

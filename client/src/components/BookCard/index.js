@@ -1,26 +1,28 @@
 import React from 'react';
 
-const BookCard = () => {
+const BookCard = ({title, authors, description, image, link}) => {
 
     return (
         <div>
             <div className='top'>
                 <section>
-                    <h6 className='title'>Title</h6>
-                    <p className='authors'>Authors</p>
+                    <h6 className='title'>{title}</h6>
+                    <p className='authors'>{authors}</p>
                 </section>
                 <section>
                     <button className='View'>
-                        ViewButton
+                        <a href={link} target='_blank' rel='noreferrer'>
+                            View
+                        </a>
                     </button>
                     <button className='Save'>
-                        SaveButton
+                        Save
                     </button>
                 </section>
             </div>
             <div className='bottom'>
-                <img src='IMAGE' alt='book' />
-                <p className='description'>Description</p>
+                <img src={image} alt='book' />
+                <p className='description'>{description}</p>
             </div>
         </div>
     )

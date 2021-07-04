@@ -10,7 +10,6 @@ class Saved extends Component {
     componentDidMount() {
         API.getSavedBooks()
             .then((res) => {
-                console.log(res.data);
                 this.setState({
                     books: res.data.map((e, i) => ({
                         key: i,
@@ -25,9 +24,36 @@ class Saved extends Component {
     };
 
     render() {
+        let savedList;
+        if(this.state.books.length) {
+            savedList = this.state.books.map(
+                (book) => {
+                    <div>
+                        <h5>Results</h5>
+                        <Results 
+                            key={book.id}
+                            title={book.volumeInfo.title}
+                            authors={book.volumeInfo.authors.join(', ')}
+                            description={book.volumeInfo.description}
+                            image={book.volumeInfo.imageLinks.thumbnail}
+                            link={book.volumeInfo.infoLink}
+                            Button={() => (
+                                <button 
+                                    onClick={() => this.handleSaveBook(book.id)}>
+                                    Save
+                                </button>
+                            )}
+                        /> 
+                    </div>
+                }
+            )
+        } else {
+            savedList = <h5>Search a for a book you enjoy and click save to begin adding books to this page</h5>
+        };
+                    
         return (
             <div>
-                <Saved />
+                {savedList}
             </div>
         )
     }  

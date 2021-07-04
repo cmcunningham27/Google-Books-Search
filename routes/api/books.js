@@ -11,7 +11,7 @@ router.route('/saved')
     .get(booksController.findAll)
 
 router.route('/:id')
-    // .get(booksController.findById)
+    .delete(booksController.remove)
     
 
 module.exports = router;

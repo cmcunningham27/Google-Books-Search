@@ -43,8 +43,9 @@ class SearchBooks extends Component {
             image: book.volumeInfo.imageLinks.thumbnail,
             link: book.volumeInfo.infoLink
         })
-        
-    }
+        .then((res) => console.log(res))
+        .cathc((err) => console.log(err));
+    };
     
 
     render() {

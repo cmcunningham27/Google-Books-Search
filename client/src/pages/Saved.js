@@ -9,14 +9,15 @@ class Saved extends Component {
     componentDidMount() {
         API.getSavedBooks()
             .then((res) => {
+                console.log(res.data);
                 this.setState({
-                    books: res.data.results.map((e, i) => ({
+                    books: res.data.map((e, i) => ({
                         key: i,
-                        title: e.volumeInfo.title,
-                        authors: e.columeInfo.authors.join(', '),
-                        description: e.volumeInfo.description,
-                        image: e.volumeInfo.imageLinks.thumbnail,
-                        link: e.volumeInfo.infoLink
+                        title: e.title,
+                        authors: e.authors.join(', '),
+                        description: e.description,
+                        image: e.image,
+                        link: e.info
                     }))
                 })
             })
@@ -25,7 +26,7 @@ class Saved extends Component {
     render() {
         return (
             <div>
-                <h1>This is Saved</h1>
+                <h1></h1>
             </div>
         )
     }  

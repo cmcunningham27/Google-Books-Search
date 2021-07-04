@@ -31,6 +31,11 @@ class SearchBooks extends Component {
             // .then(() => console.log(this.state.books))
             .catch(err => console.log(err));
     };
+
+    handleSaveBook = (event) => {
+        console.log(event);
+        // API.saveBook(event.target.value)
+    }
     
 
     render() {
@@ -45,6 +50,13 @@ class SearchBooks extends Component {
                         description={book.volumeInfo.description}
                         image={book.volumeInfo.imageLinks.thumbnail}
                         link={book.volumeInfo.infoLink}
+                        // handleSaveBook={this.handleSaveBook}
+                        Button={() => (
+                            <button 
+                                onClick={() => this.handleSaveBook(book.id)}>
+                                Save
+                            </button>
+                        )}
                     /> 
                 )
             )

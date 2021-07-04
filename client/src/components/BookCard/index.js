@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookCard = ({title, authors, description, image, link}) => {
+const BookCard = ({title, authors, description, image, link, Button}) => {
 
     return (
         <div>
@@ -15,9 +15,7 @@ const BookCard = ({title, authors, description, image, link}) => {
                             View
                         </a>
                     </button>
-                    <button className='Save'>
-                        Save
-                    </button>
+                    <Button />
                 </section>
             </div>
             <div className='bottom'>

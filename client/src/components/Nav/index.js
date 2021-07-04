@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 
-export default function Index() {
+export default function Nav() {
     return (
         <div>
             <h6>Google Books</h6>

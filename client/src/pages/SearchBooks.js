@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import GoogleBar from '../components/GoogleBar/GoogleBar';
-import Results from '../components/Results/Results';
+import GoogleBar from '../components/GoogleBar';
+import Results from '../components/Results';
 import API from '../utils/API';
 
 
@@ -22,18 +22,19 @@ class SearchBooks extends Component {
         API.searchBooks(this.state.searchTerm)
             .then((res) => {
                 console.log(res);
-                // setBooks(
-                //     res.data.map((e, i) => ({
-                //         key: i,
-                //     }))
-                // )
+                this.setState({
+                        books: res.data
+                })
             })
-    }
+            .then(() => console.log(this.state.books))
+            .catch(err => console.log(err));
+    };
+    
 
     render() {
         return (
             <div>
-                <GoogleBar handleSearch={this.handleSearch} handleBookSearch={this.handleBookSearch}/>
+                <GoogleBar handleSearch={this.handleSearch} handleBookSearch={this.handleBookSearch} searchTerm={this.state.searchTerm}/>
                 <Results />
             </div>
         )

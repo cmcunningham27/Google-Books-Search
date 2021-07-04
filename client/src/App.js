@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Index from './components/Nav/Index';
-import Header from './components/Header/Header';
+import Nav from './components/Nav';
+import Header from './components/Header';
 import Saved from './pages/Saved';
 import SearchBooks from './pages/SearchBooks';
 import "./App.css";
@@ -9,14 +9,14 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      <Index />
+      <Nav />
       <Header />
       <Switch>
-        <Route exact path='/saved'>
-          {Saved}
-        </Route>
+        <Route exact path='/saved' component={Saved}/>
+          {/* <Saved />
+        </Route> */}
         <Route exact path='/'>
-          {SearchBooks}
+          <SearchBooks />
         </Route>
       </Switch>
     </BrowserRouter>

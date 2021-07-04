@@ -23,6 +23,13 @@ class Saved extends Component {
             })
     };
 
+    handleDeleteBook(id) {
+        const book = this.state.books.items.find((book) => book.id === id);
+        API.deleteBook(book)
+            .then(res => this.componentDidMount)
+            .catch(err => console.log(err));
+    };
+
     render() {
         let savedList;
         if(this.state.books.length) {
@@ -39,8 +46,8 @@ class Saved extends Component {
                             link={book.volumeInfo.infoLink}
                             Button={() => (
                                 <button 
-                                    onClick={() => this.handleSaveBook(book.id)}>
-                                    Save
+                                    onClick={() => this.handleDeleteBook(book.id)}>
+                                    Delete
                                 </button>
                             )}
                         /> 

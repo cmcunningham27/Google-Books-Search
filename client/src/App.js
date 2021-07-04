@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Nav from './components/Nav';
-import Header from './components/Header';
+import Index from './components/Nav/Index';
+import Header from './components/Header/Header';
 import Saved from './pages/Saved';
 import Search from './pages/Search';
 import "./App.css";
@@ -9,7 +9,7 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
+      <Index />
       <Header />
       <Switch>
         <Route exact path='/saved'>

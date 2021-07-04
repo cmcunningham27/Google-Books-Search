@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react';
+import GoogleBar from '../components/GoogleBar/GoogleBar';
+import Results from '../components/Results/Results';
+import API from '../utils/API';
 
-export default function Search() {
+const Search = () => {
+    const [books, setBooks] = useState([]);
+
+    searchBooks = () => {
+        API.searchBooks()
+    }
+
+    
     return (
         <div>
-            <h1>This is Search</h1>
+            <GoogleBar />
+            <Results />
         </div>
-    )
+    )  
 }

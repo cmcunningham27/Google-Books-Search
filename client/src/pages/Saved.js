@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import API from '../utils/API';
+import Saved from '../components/Saved';
 
 class Saved extends Component {
     state = {
@@ -26,7 +27,7 @@ class Saved extends Component {
     render() {
         return (
             <div>
-                <h1></h1>
+                <Saved />
             </div>
         )
     }  

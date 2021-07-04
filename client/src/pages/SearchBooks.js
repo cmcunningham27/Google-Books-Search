@@ -9,7 +9,8 @@ import API from '../utils/API';
 class SearchBooks extends Component {
     state = {
         books: [],
-        searchTerm: ''
+        searchTerm: '',
+        searched: false
     }
 
     handleSearch = (event) => {
@@ -26,7 +27,7 @@ class SearchBooks extends Component {
                         books: res.data
                 })
             })
-            .then(() => console.log(this.state.books))
+            .then(() => this.setState({searched: true}))
             .catch(err => console.log(err));
     };
     
@@ -35,7 +36,28 @@ class SearchBooks extends Component {
         return (
             <div>
                 <GoogleBar handleSearch={this.handleSearch} handleBookSearch={this.handleBookSearch} searchTerm={this.state.searchTerm}/>
-                <Results />
+                <div>
+                {this.state.searched ? (
+                    <ul>
+                        {this.state.books.map(
+                            (book) => (
+                                <Results 
+                                    key={book.id}
+                                    title={book.volumeInfo.title}
+                                    authors={book.volumeInfo.authors.join(', ')}
+                                    description={book.volumeInfo.description}
+                                    image={book.volumeInfo.imageLinks.thumbnail}
+                                    link={book.volumeInfo.infoLink}
+                                /> 
+                            )
+                        )}
+                    </ul>
+                ) : (
+                    <h5>
+                        Search A Book!
+                    </h5>
+                )}
+                </div>
             </div>
         )
     }

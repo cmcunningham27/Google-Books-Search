@@ -13,11 +13,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/saved' component={Saved}/>
-          {/* <Saved />
-        </Route> */}
-        <Route exact path='/'>
-          <SearchBooks />
-        </Route>
+        <Route exact path='/' component={SearchBooks}/>
       </Switch>
     </BrowserRouter>
   );

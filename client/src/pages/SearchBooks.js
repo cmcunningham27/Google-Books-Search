@@ -22,7 +22,6 @@ class SearchBooks extends Component {
         event.preventDefault();
         API.searchBooks(this.state.searchTerm)
             .then((res) => {
-                console.log(res);
                 this.setState({
                         books: res.data,
                         searched: true
@@ -34,7 +33,6 @@ class SearchBooks extends Component {
 
     handleSaveBook = (id) => {
         const book = this.state.books.items.find((book) => book.id === id);
-        console.log(book);
         API.saveBook({
             bookId: book.id,
             title: book.volumeInfo.title,
@@ -44,7 +42,7 @@ class SearchBooks extends Component {
             link: book.volumeInfo.infoLink
         })
         .then((res) => console.log(res))
-        .cathc((err) => console.log(err));
+        .catch((err) => console.log(err));
     };
     
 

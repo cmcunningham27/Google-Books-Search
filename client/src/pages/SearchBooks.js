@@ -32,9 +32,18 @@ class SearchBooks extends Component {
             .catch(err => console.log(err));
     };
 
-    handleSaveBook = (event) => {
-        console.log(event);
-        // API.saveBook(event.target.value)
+    handleSaveBook = (id) => {
+        const book = this.state.books.items.find((book) => book.id === id);
+        console.log(book);
+        API.saveBook({
+            bookId: book.id,
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors,
+            description: book.volumeInfo.description,
+            image: book.volumeInfo.imageLinks.thumbnail,
+            link: book.volumeInfo.infoLink
+        })
+        
     }
     
 
@@ -50,7 +59,6 @@ class SearchBooks extends Component {
                         description={book.volumeInfo.description}
                         image={book.volumeInfo.imageLinks.thumbnail}
                         link={book.volumeInfo.infoLink}
-                        // handleSaveBook={this.handleSaveBook}
                         Button={() => (
                             <button 
                                 onClick={() => this.handleSaveBook(book.id)}>

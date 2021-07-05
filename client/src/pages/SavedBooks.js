@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import API from '../utils/API';
 import Saved from '../components/Saved';
 
-class Saved extends Component {
+class SavedBooks extends Component {
     state = {
         books: []
     };
@@ -13,57 +13,59 @@ class Saved extends Component {
                 this.setState({
                     books: res.data.map((e, i) => ({
                         key: i,
+                        bookId: e.bookId,
                         title: e.title,
                         authors: e.authors.join(', '),
                         description: e.description,
                         image: e.image,
-                        link: e.info
+                        link: e.link
                     }))
                 })
             })
+            .catch(err => console.log(err));
     };
 
     handleDeleteBook(id) {
-        const book = this.state.books.items.find((book) => book.id === id);
-        API.deleteBook(book)
-            .then(res => this.componentDidMount)
+        console.log(id);
+        // const book = this.state.books.items.find((book) => book.id === id);
+        API.deleteBook(id)
+            .then(() => this.componentDidMount)
             .catch(err => console.log(err));
     };
 
     render() {
+        console.log(this.state.books);
         let savedList;
         if(this.state.books.length) {
             savedList = this.state.books.map(
-                (book) => {
-                    <div>
-                        <h5>Results</h5>
-                        <Results 
-                            key={book.id}
-                            title={book.volumeInfo.title}
-                            authors={book.volumeInfo.authors.join(', ')}
-                            description={book.volumeInfo.description}
-                            image={book.volumeInfo.imageLinks.thumbnail}
-                            link={book.volumeInfo.infoLink}
+                (book) => (
+                        <Saved 
+                            key={book.key}
+                            title={book.title}
+                            authors={book.authors}
+                            description={book.description}
+                            image={book.image}
+                            link={book.link}
                             Button={() => (
                                 <button 
-                                    onClick={() => this.handleDeleteBook(book.id)}>
+                                    onClick={() => this.handleDeleteBook(book.bookId)}>
                                     Delete
                                 </button>
                             )}
                         /> 
-                    </div>
-                }
+                )
             )
         } else {
-            savedList = <h5>Search a for a book you enjoy and click save to begin adding books to this page</h5>
+            savedList = <h5>Search for a book you enjoy and click save to begin adding books to this page</h5>
         };
                     
         return (
             <div>
+                <h5>Saved Books</h5>
                 {savedList}
             </div>
         )
     }  
 }
 
-export default Saved;
+export default SavedBooks;

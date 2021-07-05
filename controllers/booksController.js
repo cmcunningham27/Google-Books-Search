@@ -11,14 +11,14 @@ module.exports = {
 
     findAll: function(req, res) {
         db.Book
-            .find({})
+            .find(req.query)
             .then(dbModel => res.json(dbModel))
             .catch(err => console.log(err));
     },
 
     remove: function(req, res) {
         db.Book
-            .findById({_id: req.params.id})
+            .findOne({bookId: req.params.id})
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))
             .catch(err => console.log(err));

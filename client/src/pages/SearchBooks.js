@@ -33,6 +33,7 @@ class SearchBooks extends Component {
 
     handleSaveBook = (id) => {
         const book = this.state.books.items.find((book) => book.id === id);
+        console.log(book.id);
         API.saveBook({
             bookId: book.id,
             title: book.volumeInfo.title,

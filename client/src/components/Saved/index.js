@@ -1,10 +1,10 @@
 import React from 'react';
+import SavedCard from '../SavedCard';
 
-const Saved = () => {
-
+const Saved = (props) => {
     return (
         <div>
-            <SavedCard />
+            <SavedCard {...props}/>
         </div>
     )
 };

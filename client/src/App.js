@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav';
 import Header from './components/Header';
-import Saved from './pages/Saved';
+import SavedBooks from './pages/SavedBooks';
 import SearchBooks from './pages/SearchBooks';
 import "./App.css";
 
@@ -12,7 +12,7 @@ function App() {
       <Nav />
       <Header />
       <Switch>
-        <Route exact path='/saved' component={Saved}/>
+        <Route exact path='/saved' component={SavedBooks}/>
         <Route exact path='/' component={SearchBooks}/>
       </Switch>
     </BrowserRouter>

@@ -11,9 +11,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +22,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.16.3",
+    "gh-pages": "^3.2.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.12.15"
   }

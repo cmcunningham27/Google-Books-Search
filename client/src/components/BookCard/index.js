@@ -8,8 +8,8 @@ const BookCard = ({title, authors, description, image, link, Button}) => {
         <div className='bookCard'>
             <div className='top'>
                 <section className='left'>
-                    <h6 className='title'>{title}</h6>
-                    <p className='authors'>{authors}</p>
+                    <h5 className='title'>{title}</h5>
+                    <h6 className='authors'>{authors}</h6>
                 </section>
                 <section className='right'>
                     <button className='View'>

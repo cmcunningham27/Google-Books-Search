@@ -11,16 +11,21 @@
     flex-direction: row;
 }
 
-h5 {
+/* .title {
     margin-bottom: 10px !important;
 }
 
-h6 {
+.authors {
     margin-top: 0 !important;
-}
+} */
 
 .right {
     margin-left: auto;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
 }
 
 .description {

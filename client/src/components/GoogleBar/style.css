@@ -6,11 +6,19 @@
     padding: 10px;
 }
 
+.bookSearch {
+    margin: 5px 0 0 0  !important;
+}
+
+.book {
+    margin-top: 5px !important;
+}
+
 input {
-    width: 100%;
+    width: 99%;
 }
 
 button {
     margin-left: auto;
-    margin-top: 10px;
+    margin-top: 15px;
 }

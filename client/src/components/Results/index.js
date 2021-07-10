@@ -1,9 +1,10 @@
 import React from 'react';
 import BookCard from '../BookCard';
+import './style.css';
 
 const Results = (props) => {
     return (
-        <div>
+        <div classname='results'>
             <BookCard {...props}/>
         </div>
     )

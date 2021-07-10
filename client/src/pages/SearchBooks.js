@@ -52,7 +52,7 @@ class SearchBooks extends Component {
         if(this.state.searched) {
             list = this.state.books.items.map(
                 (book) => (
-                    <div>
+                    <div className='searchContainer'>
                         <h5>Results</h5>
                         <Results 
                             key={book.id}
@@ -72,7 +72,9 @@ class SearchBooks extends Component {
                 )
             )
         } else {
-            list = <h5>Search A Book!</h5>
+            list = <div className='searchContainer'>
+                        <h5>Search A Book!</h5>
+                    </div>
         }
 
         return (

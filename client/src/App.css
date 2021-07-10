@@ -2,13 +2,22 @@
   position: relative;
 }
 
-.savedBooks {
+.savedBooks,
+.searchContainer {
   /* display: flex;
   flex-direction: column;
   border: 2px solid darkgrey; */
   margin: 20px;
   padding: 10px;
   border: 2px solid darkgray;
+}
+
+.title {
+  margin-bottom: 10px !important;
+}
+
+.authors {
+  margin-top: 0 !important;
 }
 
 /* .App-header {

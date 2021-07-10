@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 15px;
     background-color:darkslateblue;
     color: white;
 }
 
 strong {
     margin-left: 15px;
+    color: white;
+}
+strong:hover {
+    color: black;
 }

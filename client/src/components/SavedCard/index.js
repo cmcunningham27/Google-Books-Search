@@ -1,16 +1,17 @@
 import React from 'react';
+import './style.css';
 
 const BookCard = ({key, title, authors, description, image, link, Button}) => {
     console.log(key);
 
     return (
-        <div>
+        <div className='savedCard'>
             <div className='top'>
                 <section>
-                    <h6 className='title'>{title}</h6>
-                    <p className='authors'>{authors}</p>
+                    <h5 className='title'>{title}</h5>
+                    <h6 className='authors'>{authors}</h6>
                 </section>
-                <section>
+                <section className='right'>
                     <button className='View'>
                         <a href={link} target='_blank' rel='noopener noreferrer'>
                             View

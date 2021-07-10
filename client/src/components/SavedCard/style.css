@@ -1,0 +1,28 @@
+.savedCard {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid darkgray;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+
+h5 {
+    margin-bottom: 10px !important;
+}
+
+h6 {
+    margin-top: 0 !important;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.description {
+    margin: 10px 20px !important;
+}

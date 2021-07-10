@@ -4,17 +4,19 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import SavedBooks from './pages/SavedBooks';
 import SearchBooks from './pages/SearchBooks';
+import Footer from './components/Footer';
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter className='app'>
       <Nav />
       <Header />
       <Switch>
         <Route exact path='/saved' component={SavedBooks}/>
         <Route exact path='/' component={SearchBooks}/>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

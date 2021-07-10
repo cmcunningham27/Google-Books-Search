@@ -1,12 +1,14 @@
-.App {
-  text-align: center;
+.app {
+  position: relative;
 }
 
 .savedBooks {
   /* display: flex;
   flex-direction: column;
   border: 2px solid darkgrey; */
+  margin: 20px;
   padding: 10px;
+  border: 2px solid darkgray;
 }
 
 /* .App-header {

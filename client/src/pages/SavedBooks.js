@@ -60,7 +60,7 @@ class SavedBooks extends Component {
         };
                     
         return (
-            <div>
+            <div className='savedBooks'>
                 <h5>Saved Books</h5>
                 {savedList}
             </div>

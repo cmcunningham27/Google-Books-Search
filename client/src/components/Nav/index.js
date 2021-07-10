@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default function Nav() {
     return (
         <div className='nav-bar'>
-            <h6>Google Books</h6>
+            <h5>Google Books</h5>
             <Link to={'/'}>
                 <strong>
                     Search

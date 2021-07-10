@@ -1,0 +1,24 @@
+.bookCard {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.description {
+    margin-left: 5px;
+}

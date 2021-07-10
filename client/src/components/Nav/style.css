@@ -1,0 +1,8 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+strong {
+    margin-left: 15px;
+}

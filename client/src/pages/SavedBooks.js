@@ -5,6 +5,7 @@ import SavedCard from '../components/SavedCard';
 export default function SavedBooks() {
     //sets default state
     const [books, setBooks] = useState([]);
+    const [remove, setRemove] = useState();
 
     //when component mounts it makes a call to the API to retrieve all saved books and create an array with each book's details in book's State
     useEffect(() => {
@@ -24,14 +25,14 @@ export default function SavedBooks() {
                 )
             })
             .catch(err => console.log(err));
-    }, []);
+    }, [remove]);
 
     //sends specific book's id to API call and removes it from the database of saved books, calls componentDidMount to re-render page with updates
     const handleDeleteBook = (id) => {
         console.log('deleted book', id);
         // const book = this.state.books.items.find((book) => book.id === id);
         API.deleteBook(id)
-            // .then(() => useEffect())
+            .then((res) => setRemove(res))
             .catch(err => console.log(err));
     };
 

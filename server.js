@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 app.use(routes);
 
-
+//connects to MongoDb Atlas database or localhost
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks');
 
 // Send every other request to the React app
@@ -25,6 +25,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+//listens at PORT
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

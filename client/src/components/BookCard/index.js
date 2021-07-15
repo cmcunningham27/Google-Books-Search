@@ -27,6 +27,6 @@ const BookCard = ({title, authors, description, image, link, Button}) => {
             </div>
         </div>
     )
-}
+};
 
 export default BookCard;

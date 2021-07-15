@@ -11,7 +11,6 @@ export default function SavedBooks() {
     useEffect(() => {
         API.getSavedBooks()
             .then((res) => {
-                console.log('saved response', res.data);
                 setBooks(
                     res.data.map((e, i) => ({
                         key: i,
@@ -29,7 +28,6 @@ export default function SavedBooks() {
 
     //sends specific book's id to API call and removes it from the database of saved books, calls componentDidMount to re-render page with updates
     const handleDeleteBook = (id) => {
-        console.log('deleted book', id);
         API.deleteBook(id)
             .then((res) => setRemove(res))
             .catch(err => console.log(err));

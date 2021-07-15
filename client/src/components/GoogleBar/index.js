@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const GoogleBar = ({handleSearch, handleBookSearch, searchTerm}) => {
+const GoogleBar = ({handleSearch, handleBookSearch}) => {
 
     return (
         <div className='searchBar'>

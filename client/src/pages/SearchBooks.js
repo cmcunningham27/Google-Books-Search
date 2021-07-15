@@ -28,7 +28,6 @@ export default function SearchBooks() {
     //takes book's id and gathers its details to send to the database to save
     const handleSaveBook = (id) => {
         const book = books.items.find((book) => book.id === id);
-        console.log(book.id);
         API.saveBook({
             bookId: book.id,
             title: book.volumeInfo.title,

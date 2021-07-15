@@ -1,17 +1,18 @@
-import React, { useState, componentDidMount } from 'react'
+import React, { useState, useEffect } from 'react'
 import API from '../utils/API';
-import Saved from '../components/Saved';
+import SavedCard from '../components/SavedCard';
 
 export default function SavedBooks() {
     //sets default state
     const [books, setBooks] = useState([]);
 
-    //when component mounts its makes a call to the API to retrieve all saved books and create an array with each book's details in book's State
-    componentDidMount = () => {
+    //when component mounts it makes a call to the API to retrieve all saved books and create an array with each book's details in book's State
+    useEffect(() => {
         API.getSavedBooks()
             .then((res) => {
-                setBooks({
-                    books: res.data.map((e, i) => ({
+                console.log('saved response', res.data);
+                setBooks(
+                    res.data.map((e, i) => ({
                         key: i,
                         bookId: e.bookId,
                         title: e.title,
@@ -20,17 +21,17 @@ export default function SavedBooks() {
                         image: e.image,
                         link: e.link
                     }))
-                })
+                )
             })
             .catch(err => console.log(err));
-    };
+    }, []);
 
     //sends specific book's id to API call and removes it from the database of saved books, calls componentDidMount to re-render page with updates
     const handleDeleteBook = (id) => {
         console.log('deleted book', id);
         // const book = this.state.books.items.find((book) => book.id === id);
         API.deleteBook(id)
-            .then(() => componentDidMount())
+            // .then(() => useEffect())
             .catch(err => console.log(err));
     };
 
@@ -41,7 +42,7 @@ export default function SavedBooks() {
     if(books.length) {
         savedList = books.map(
             (book) => (
-                    <Saved 
+                    <SavedCard 
                         key={book.key}
                         title={book.title}
                         authors={book.authors}

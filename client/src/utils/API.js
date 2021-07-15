@@ -11,6 +11,7 @@ export default {
     },
 
     getSavedBooks: function() {
+        console.log('saved');
         return axios.get('/api/books/saved');
     },
 

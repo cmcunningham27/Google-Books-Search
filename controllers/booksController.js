@@ -10,8 +10,9 @@ module.exports = {
     },
     //collects all saved books from database
     findAll: function(req, res) {
+        // console.log('saved again', req);
         db.Book
-            .find(req.query)
+            .find()
             .then(dbModel => res.json(dbModel))
             .catch(err => console.log(err));
     },

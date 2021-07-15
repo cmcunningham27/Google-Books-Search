@@ -1,8 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const BookCard = ({key, title, authors, description, image, link, Button}) => {
-    console.log(key);
+const SavedCard = ({ title, authors, description, image, link, Button }) => {
 
     return (
         <div className='savedCard'>
@@ -28,4 +27,4 @@ const BookCard = ({key, title, authors, description, image, link, Button}) => {
     )
 };
 
-export default BookCard;
+export default SavedCard;

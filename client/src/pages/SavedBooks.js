@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import API from '../utils/API';
 import Saved from '../components/Saved';
 
-class SavedBooks extends Component {
+export default function SavedBooks() {
     state = {
         books: []
     };
@@ -66,6 +66,4 @@ class SavedBooks extends Component {
             </div>
         )
     }  
-}
-
-export default SavedBooks;
+};

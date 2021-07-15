@@ -7,7 +7,9 @@ const GoogleBar = ({handleSearch, handleBookSearch, searchTerm}) => {
         <div className='searchBar'>
             <h5 className='bookSearch'>Book Search</h5>
             <h6 className='book'>Book</h6>
+            {/* runs function on input */}
             <input type='text' className='' placeholder='Search For a Book' onInput={handleSearch}/> 
+            {/* runs function when button is searched */}
             <button name='search' className='search' onClick={handleBookSearch}>
                 Search
             </button>

@@ -1,3 +1,4 @@
+/* styles the nav bar and and adds hover effect when mouse moves over search or saved */
 .nav-bar {
     display: flex;
     flex-direction: row;

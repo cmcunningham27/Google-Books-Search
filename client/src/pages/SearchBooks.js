@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import GoogleBar from '../components/GoogleBar';
 import Results from '../components/Results';
 import API from '../utils/API';
@@ -28,7 +28,7 @@ export default function SearchBooks() {
     };
 
     const handleSaveBook = (id) => {
-        const book = this.state.books.items.find((book) => book.id === id);
+        const book = books.items.find((book) => book.id === id);
         console.log(book.id);
         API.saveBook({
             bookId: book.id,
@@ -43,11 +43,10 @@ export default function SearchBooks() {
     };
     
     let list;
-    if(this.state.searched) {
-        list = this.state.books.items.map(
+    if(searched) {
+        list = books.items.map(
             (book) => (
                 <div>
-                    {/* <h5>Results</h5> */}
                     <Results 
                         key={book.id}
                         title={book.volumeInfo.title}
@@ -57,7 +56,7 @@ export default function SearchBooks() {
                         link={book.volumeInfo.infoLink}
                         Button={() => (
                             <button 
-                                onClick={() => this.handleSaveBook(book.id)}>
+                                onClick={() => handleSaveBook(book.id)}>
                                 Save
                             </button>
                         )}

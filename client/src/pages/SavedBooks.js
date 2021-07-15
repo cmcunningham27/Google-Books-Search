@@ -27,15 +27,15 @@ export default function SavedBooks() {
         console.log('deleted book', id);
         // const book = this.state.books.items.find((book) => book.id === id);
         API.deleteBook(id)
-            .then(() => this.componentDidMount)
+            .then(() => componentDidMount())
             .catch(err => console.log(err));
     };
 
     
-    console.log(this.state.books);
+    console.log(books);
     let savedList;
-    if(this.state.books.length) {
-        savedList = this.state.books.map(
+    if(books.length) {
+        savedList = books.map(
             (book) => (
                     <Saved 
                         key={book.key}
@@ -46,7 +46,7 @@ export default function SavedBooks() {
                         link={book.link}
                         Button={() => (
                             <button 
-                                onClick={() => this.handleDeleteBook(book.bookId)}>
+                                onClick={() => handleDeleteBook(book.bookId)}>
                                 Delete
                             </button>
                         )}

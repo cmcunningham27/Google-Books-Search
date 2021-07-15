@@ -7,6 +7,7 @@ import SearchBooks from './pages/SearchBooks';
 import Footer from './components/Footer';
 import "./App.css";
 
+//Uses BrowserRouter to Switch through pages, and renders a nav bar, header, and footer on both pages
 function App() {
   return (
     <BrowserRouter className='app'>
@@ -20,6 +21,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 export default App;

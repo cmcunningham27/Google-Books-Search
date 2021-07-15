@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//makes calls to the Google Books API or the back-end's api routes
 export default {
     searchBooks: function(query) {
         return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${ query }`)

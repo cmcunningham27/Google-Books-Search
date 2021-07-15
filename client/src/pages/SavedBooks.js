@@ -3,8 +3,10 @@ import API from '../utils/API';
 import Saved from '../components/Saved';
 
 export default function SavedBooks() {
+    //sets default state
     const [books, setBooks] = useState([]);
 
+    //when component mounts its makes a call to the API to retrieve all saved books and create an array with each book's details in book's State
     componentDidMount = () => {
         API.getSavedBooks()
             .then((res) => {
@@ -23,6 +25,7 @@ export default function SavedBooks() {
             .catch(err => console.log(err));
     };
 
+    //sends specific book's id to API call and removes it from the database of saved books, calls componentDidMount to re-render page with updates
     const handleDeleteBook = (id) => {
         console.log('deleted book', id);
         // const book = this.state.books.items.find((book) => book.id === id);
@@ -31,9 +34,10 @@ export default function SavedBooks() {
             .catch(err => console.log(err));
     };
 
-    
-    console.log(books);
+    //declare variable
     let savedList;
+
+    //if there are books in the array, send each book's details to the Saved component, one-at-a-time
     if(books.length) {
         savedList = books.map(
             (book) => (
@@ -44,6 +48,7 @@ export default function SavedBooks() {
                         description={book.description}
                         image={book.image}
                         link={book.link}
+                        //send button as a prop with book's id
                         Button={() => (
                             <button 
                                 onClick={() => handleDeleteBook(book.bookId)}>
@@ -53,6 +58,7 @@ export default function SavedBooks() {
                     /> 
             )
         )
+    //otherwise leave a message for the user
     } else {
         savedList = <h5>Search for a book you enjoy and click save to begin adding books to this page</h5>
     };

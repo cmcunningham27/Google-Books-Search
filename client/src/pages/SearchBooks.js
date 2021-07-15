@@ -8,22 +8,20 @@ import API from '../utils/API';
 //send map of book results to Results component
 export default function SearchBooks() {
     const [books, setBooks] = useState([]);
-    const [serachTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [searched, setSearched] = useState(false);
 
     handleSearch = (event) => {
-        this.setState({searchTerm: event.target.value.toLowerCase() });
+        setSearchTerm(event.target.value.toLowerCase());
     }
 
 
     handleBookSearch = (event) => {
         event.preventDefault();
-        API.searchBooks(this.state.searchTerm)
+        API.searchBooks(searchTerm)
             .then((res) => {
-                this.setState({
-                        books: res.data,
-                        searched: true
-                })
+                setBooks(res.data);
+                setSearched(true);
             })
             // .then(() => console.log(this.state.books))
             .catch(err => console.log(err));

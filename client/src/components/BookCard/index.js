@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 
 const BookCard = ({title, authors, description, image, link, Button}) => {
-    console.log(link);
 
     return (
         <div className='bookCard'>
@@ -12,11 +11,13 @@ const BookCard = ({title, authors, description, image, link, Button}) => {
                     <h6 className='authors'>{authors}</h6>
                 </section>
                 <section className='right'>
+                    {/* when clicked sends user to link */}
                     <button className='View'>
                         <a href={link} target='_blank' rel='noopener noreferrer'>
                             View
                         </a>
                     </button>
+                    {/* when clicked runs function to save book */}
                     <Button />
                 </section>
             </div>

@@ -1,3 +1,4 @@
+/* styles bookCard component and uses flex box to render appropriately */
 .bookCard {
     display: flex;
     flex-direction: column;

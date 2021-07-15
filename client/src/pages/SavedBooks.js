@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, componentDidMount } from 'react'
 import API from '../utils/API';
 import Saved from '../components/Saved';
 

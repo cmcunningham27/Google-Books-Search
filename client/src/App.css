@@ -1,19 +1,18 @@
-/* .app {
-  position: relative;
-} */
-
+/* styles the main div element for saved books list */
 .savedBooks{
   margin: 20px;
   padding: 10px;
   border: 2px solid darkgray;
 }
 
+/* styles main div element for searched book's results list */
 .searchContainer {
   margin: 20px;
   padding: 0 10px;
   border: 2px solid darkgray;
 }
 
+/* gives important styles to title and author of each savedCard */
 .title {
   margin-bottom: 10px !important;
 }

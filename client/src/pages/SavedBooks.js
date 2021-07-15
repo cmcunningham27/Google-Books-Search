@@ -26,7 +26,7 @@ class SavedBooks extends Component {
     };
 
     handleDeleteBook(id) {
-        console.log(id);
+        console.log('deleted book', id);
         // const book = this.state.books.items.find((book) => book.id === id);
         API.deleteBook(id)
             .then(() => this.componentDidMount)

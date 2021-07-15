@@ -6,12 +6,10 @@ import API from '../utils/API';
 
 //send searchTerm, input function and api function to GoogleBar component
 //send map of book results to Results component
-class SearchBooks extends Component {
-    state = {
-        books: [],
-        searchTerm: '',
-        searched: false
-    }
+export default function SearchBooks() {
+    const [books, setBooks] = useState([]);
+    const [serachTerm, setSearchTerm] = useState('');
+    const [searched, setSearched] = useState(false);
 
     handleSearch = (event) => {
         this.setState({searchTerm: event.target.value.toLowerCase() });
@@ -88,6 +86,4 @@ class SearchBooks extends Component {
         )
     }
       
-}
-
-export default SearchBooks;
+};

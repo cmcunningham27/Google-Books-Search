@@ -58,7 +58,8 @@ This project is licensed under the MIT license.
 * Knowing what to put as the parameters and queries in the Google Books API was a struggle at first, but evetually got it figured out.
 * I ran into a problem with concurrently. I tried many things to fix it, but the only option that worked was to re-clone the repo in a different location. This resolved the issue, and it no longer came up.
 * I do have a node_module on the server side. However, somehow node_modules got added on the client-side. That was not planned. I received help from another person and they said it probably has to do with packages I am using on the front-end. I feel like they should not be there, but they assured me it was ok. 
-* React was a bit of a struggle the first few weeks I attempted it. Now, I feel more confident with how to connect React with the back-end in a MERN app. 
+* React was a bit of a struggle the first few weeks I attempted it. Now, I feel more confident with how to connect React with the back-end in a MERN app.
+* When I switched from class components to functional components on each page, it caused many errors to ensue. I needed to go through and figure out what I needed to update for the functional components since they do not use the same state. This was not that difficult, but it was time consuming. 
 
 ## Features
 In the future I could add a Read page, so the user can go back and remember what they had read before. Sort of like a bookshelf but with technology. 

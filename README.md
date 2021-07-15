@@ -7,7 +7,7 @@
 ## Descriptions
 A MERN app that allows users to search, view, save, and delete books using the Google Books API
 ![App](./assets/images/app.png)
-![Search Results]('./assets/images/search-results.png')
+![Search Results](./assets/images/search-results.png)
 ![Saved Page](./assets/images/saved-list.png)
 ![Viewed Book](./assets/images/viewed-book.png)
 

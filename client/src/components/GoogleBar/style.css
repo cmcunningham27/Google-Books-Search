@@ -1,3 +1,4 @@
+/* styles search bar component */
 .searchBar {
     display: flex;
     flex-direction: column;
@@ -6,6 +7,7 @@
     padding: 10px;
 }
 
+/* gives important styles to override initial styles given */
 .bookSearch {
     margin: 5px 0 0 0  !important;
 }

@@ -52,8 +52,8 @@ class SearchBooks extends Component {
         if(this.state.searched) {
             list = this.state.books.items.map(
                 (book) => (
-                    <div className='searchContainer'>
-                        <h5>Results</h5>
+                    <div>
+                        {/* <h5>Results</h5> */}
                         <Results 
                             key={book.id}
                             title={book.volumeInfo.title}
@@ -80,7 +80,10 @@ class SearchBooks extends Component {
         return (
             <div>
                 <GoogleBar handleSearch={this.handleSearch} handleBookSearch={this.handleBookSearch} searchTerm={this.state.searchTerm}/>
-                {list}
+                <div className='searchContainer'>
+                    <h5>Results</h5>
+                    {list}
+                </div>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 {
   "homepage": "http://cmcunningham27.github.io/Google-Books-Search",
-  "name": "mern",
+  "name": "google-books-search",
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",

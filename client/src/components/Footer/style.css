@@ -1,6 +1,13 @@
 .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     text-align: center;
+    border-top: 2px solid darkgray;
+    background-color:darkslateblue;
+    color: white;
+    margin-top: 40px;
+    padding: 10px;
 }
+
+.text {
+    margin: 0px !important;
+}
+

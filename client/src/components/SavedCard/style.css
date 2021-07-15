@@ -1,23 +1,12 @@
 .savedCard {
-    margin: 20px;
     padding: 10px;
     border: 2px solid darkgray;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .top {
     display: flex;
     flex-direction: row;
 }
-
-/* .title {
-    margin-bottom: 10px !important;
-}
-
-.authors {
-    margin-top: 0 !important;
-} */
 
 .right {
     margin-left: auto;

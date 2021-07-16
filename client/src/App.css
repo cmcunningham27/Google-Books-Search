@@ -5,6 +5,10 @@
   border: 2px solid darkgray;
 }
 
+.savedBooksTitle {
+  text-align: center;
+}
+
 /* styles main div element for searched book's results list */
 .searchContainer {
   margin: 20px;
@@ -19,4 +23,10 @@
 
 .authors {
   margin-top: 0 !important;
+}
+
+@media screen and (min-width: 321px) {
+  .savedBooksTitle {
+    text-align: left;
+  }
 }

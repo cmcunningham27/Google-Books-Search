@@ -64,7 +64,7 @@ export default function SavedBooks() {
                 
     return (
         <div className='savedBooks'>
-            <h5>Saved Books</h5>
+            <h5 className='savedBooksTitle'>Saved Books</h5>
             {savedList}
         </div>
     )  

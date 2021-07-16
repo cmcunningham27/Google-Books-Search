@@ -29,7 +29,7 @@
 }
 
 .savedPhoto {
-    width: 40%;
+    width: 100px;
     height: 50%;
 }
 
@@ -54,5 +54,9 @@
     }
     .savedDescription {
         margin: 10px 20px !important;
+    }
+    .savedPhoto {
+        width: 40%;
+        height: 50%;
     }
 }

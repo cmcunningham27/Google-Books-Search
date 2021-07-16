@@ -8,7 +8,20 @@
 
 .top {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.right {
+    margin: 0px;
+}
+
+.title, 
+.authors {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 .left {
@@ -18,13 +31,39 @@
 
 .bottom {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
 .photo {
+    width: 100px;
     height: 50%;
 }
 
 .description {
-    margin-left: 5px;
+    /* margin-left: 5px; */
+    font-size: 13px;
+    text-align: center;
+}
+
+@media screen and (min-width: 321px) {
+    .bottom,
+    .top {
+        flex-direction: row;
+        align-items: start;
+    }
+    .right {
+        margin-left: auto;
+    }
+    .title,
+    .authors {
+        text-align: left;
+    }
+    .description {
+        margin: 10px 20px !important;
+    }
+    .photo {
+        width: 40%;
+        height: 50%;
+    }
 }

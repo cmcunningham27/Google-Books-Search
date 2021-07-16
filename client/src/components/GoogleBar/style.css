@@ -5,6 +5,7 @@
     border: 2px solid darkgray;
     margin: 20px;
     padding: 10px;
+    align-items: center;
 }
 
 /* gives important styles to override initial styles given */
@@ -14,6 +15,7 @@
 
 .book {
     margin-top: 5px !important;
+    margin-bottom: 10px !important;
 }
 
 input {
@@ -21,6 +23,17 @@ input {
 }
 
 button {
-    margin-left: auto;
     margin-top: 15px;
+}
+
+@media screen and (min-width: 321px) {
+    .searchBar {
+        align-items: start;
+    }
+    button {
+        margin-left: auto;
+    }
+    .book {
+        margin-bottom: 15px !important;
+    }
 }

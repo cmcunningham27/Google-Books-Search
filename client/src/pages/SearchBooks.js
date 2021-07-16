@@ -69,7 +69,7 @@ export default function SearchBooks() {
         //otherwise lets user know that they can search for a book
     } else {
         list = <div className='searchContainer'>
-                    <h5>Search A Book!</h5>
+                    <h5 className='searchH5'>Search A Book!</h5>
                 </div>
     }
 
@@ -77,7 +77,7 @@ export default function SearchBooks() {
         <div>
             <GoogleBar handleSearch={handleSearch} handleBookSearch={handleBookSearch} searchTerm={searchTerm}/>
             <div className='searchContainer'>
-                <h5>Results</h5>
+                <h5 className='searchTitle'>Results</h5>
                 {list}
             </div>
         </div>

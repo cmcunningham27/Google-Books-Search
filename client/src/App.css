@@ -25,8 +25,14 @@
   margin-top: 0 !important;
 }
 
+.searchH5,
+.searchTitle {
+  text-align: center;
+}
+
 @media screen and (min-width: 321px) {
-  .savedBooksTitle {
+  .savedBooksTitle,
+  .searchTitle {
     text-align: left;
   }
 }

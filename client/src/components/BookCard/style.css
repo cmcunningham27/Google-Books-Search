@@ -21,6 +21,10 @@
     flex-direction: row;
 }
 
+.photo {
+    height: 50%;
+}
+
 .description {
     margin-left: 5px;
 }

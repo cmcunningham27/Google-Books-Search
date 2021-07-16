@@ -22,7 +22,7 @@ const BookCard = ({title, authors, description, image, link, Button}) => {
                 </section>
             </div>
             <div className='bottom'>
-                <img src={image} alt='book' />
+                <img className='photo' src={image} alt='book' />
                 <p className='description'>{description}</p>
             </div>
         </div>
